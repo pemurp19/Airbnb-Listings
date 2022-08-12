@@ -1,6 +1,5 @@
 # capstone-airbnb
 
-Personal access token for pushing to personal github: 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
 
 What is problem statement - why would this be helpful:
 Airbnb owner- what is the easiest way to tell how my property will be rated? Should I be concerned with reviews or more worried about my listing?
