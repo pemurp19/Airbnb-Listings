@@ -1,4 +1,4 @@
-# capstone-airbnb
+# Airbnb Listings Data
 ------
 
 ### Airbnb Background:
