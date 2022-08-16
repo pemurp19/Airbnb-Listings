@@ -67,28 +67,21 @@ Based on EDA - appeared to be much more uniformity in the host descriptions, rel
 *NLP Modeling:*
 First had to set up the target variable - we had a continuous variable in Rating to work with but wanted to turn this into a multi-class classification problem. In looking at the distribution of ratings, 10,000 places were rated between 4 and 5 and only 350 below 4. Hence, it made sense to break up the classes into quartiles (1 for 0 - 4.59; 2 for 4.6 - 4.8; 3 for 4.81 - 4.95; 4 for ratings greater than 4.95).
 
-Host Descriptions typically getting more into the amenities and features of the listing for the model to be able to distinguish. I.e. “street parking” or “fully equipped kitchen”.
+Based on the EDA of host descriptions and user reviews, *host descriptions* typically getting more into the amenities and features of the listing for the model to be able to distinguish. Examples include hosts mentioning “street parking” and “fully equipped kitchen”. On the other hand, based on *user reviews* alone, the model would likely have a hard time distinguishing among mid level ratings yet should be able to distinguish between the ends of the spectrum where there’s a clearer difference in review sentiment and words used. 
 
-Reviews: Model had a hard time distinguishing among mid level ratings - should perform much better on the ends difference between a poor tier and best tier but what about the average ones
-
-*Reviews:*
-
-
-*Descriptions:*
-
-
-
+Through the use of TF-IDF Vectorizer and a Random Forest Classifier on host descriptions, I was able to produce a model that achieved 78.47% accuracy, which significantly outperformed the reviews model (at 57% accuracy). 
 
 Multi-class Classification on listing features:
 *Takeaways from EDA:*
 Though price should intuitively have an impact on the rating - through EDA, I discovered no discernible relationship between the price and rating variables (correlation of 0.037). As shown below, the number of amenities offered by a listing, appeared to have a more linear relationship with the rating (correlation of 0.18). There was a lack of strong correlations to the target rating variable. The most correlated features included the number of amenities and whether the host was a superhost (binarized), yet no correlations were greater than 0.2 in magnitude.
 
-
+![alt text](https://github.com/pemurp19/Airbnb-Listings/blob/main/images/Ratings%20Vs.%20Amenities.png)
 
 This informed my modeling process - I first attempted to model with limited features, but was mindful of the need to potentially add dimensionality due the difficulty in modeling with such low correlations to the target variable. I added dimensionality (including nearly 130 features for the Random Forest Classifier to train on, yet this produced a significantly overfit model. I sought to reduce overfitting through principal component analysis, though this ultimately had limited impact on the model’s performance. 
 
-Clustering was implemented with the goal of transfer learning and boosting the performance of the Random Forest Classifier. KMeans clustering on the latitudes and longitudes of listings (creating 26 clusters) resulted in a slight improvement in the models performance. 
+![alt text](https://github.com/pemurp19/Airbnb-Listings/blob/main/images/boston_neighborhoods.png)
 
+Clustering was implemented with the goal of transfer learning and boosting the performance of the Random Forest Classifier. KMeans clustering on the latitudes and longitudes of listings (creating 26 clusters) resulted in a slight improvement in the models performance. 
 
 
 The best model was a Random Forest classifier, which had a 79.6% accuracy and 80% precision.
