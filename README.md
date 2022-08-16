@@ -48,7 +48,7 @@ Of course, new listings do not have reviews available; however, it made sense to
 * [`sf_listings_3-22.csv`](./data/sf_listings_6-22.csv): San Francisco, CA Airbnb Listings Data 2021-2022
 * [`boston_reviews.csv`](./data/boston_reviews.csv): Boston, MA Airbnb Listings Data 2021-2022
 
-### Data Dictionary ([*source*])(https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit#gid=1322284596).
+### Data Dictionary [*source*](https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit#gid=1322284596).
 
 ---
 # Software Requirements
